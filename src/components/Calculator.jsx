@@ -155,7 +155,7 @@ const CalculatorComponent = () => {
               sx={{ mt: 2 }}
               data-testid="clear-history"
             >
-              Effacer l'historique
+              Effacer l&apos;historique
             </Button>
           )}
         </Box>
