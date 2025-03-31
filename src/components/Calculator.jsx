@@ -1,13 +1,8 @@
-import { useState } from 'react';
-import { 
-  Button, 
-  Grid, 
-  Paper, 
-  Container, 
-  Typography,
-  Box
-} from '@mui/material';
+import { Button, Grid, Paper, Container, Typography, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { useState } from 'react';
+
+
 import { Calculator } from '../logic/calculatorLogic';
 
 const CalcButton = styled(Button)(({ theme }) => ({
@@ -34,7 +29,7 @@ const CalculatorComponent = () => {
   const [operator, setOperator] = useState(null);
   const [calculator] = useState(new Calculator());
   const [waitingForSecondNumber, setWaitingForSecondNumber] = useState(false);
-  const [history, setHistory] = useState([]); 
+  const [setHistory] = useState([]); 
 
 
   const buttons = [

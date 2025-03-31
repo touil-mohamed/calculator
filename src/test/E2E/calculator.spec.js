@@ -125,7 +125,7 @@ test.describe('Calculatrice E2E Testes', () => {
     await expect(display).toHaveText('Error');
   });
 
-  test('Test effacer l\’historique', async ({ page }) => {
+  test('Test effacer l’historique', async ({ page }) => {
     await page.click('[data-testid="button-2"]');
     await page.click('[data-testid="button-+"]');
     await page.click('[data-testid="button-3"]');

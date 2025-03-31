@@ -1,5 +1,6 @@
-import { Calculator } from '../../logic/calculatorLogic.js';
 import { describe, beforeEach, test, expect } from 'vitest';
+
+import { Calculator } from '../../logic/calculatorLogic.js';
 
 describe('Calculator Logic', () => {
   let calculator;
