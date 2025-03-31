@@ -34,6 +34,8 @@ const CalculatorComponent = () => {
   const [operator, setOperator] = useState(null);
   const [calculator] = useState(new Calculator());
   const [waitingForSecondNumber, setWaitingForSecondNumber] = useState(false);
+  const [history, setHistory] = useState([]); 
+
 
   const buttons = [
     ['7', '8', '9', '+'],
@@ -81,6 +83,11 @@ const CalculatorComponent = () => {
     setWaitingForSecondNumber(false);
   };
 
+  const handleClearHistory = () => {
+    calculator.clearHistory();
+    setHistory([]); // Mettre à jour l'état local
+  };
+
   const handleButtonClick = (value) => {
     switch (value) {
       case '=':
@@ -103,7 +110,8 @@ const CalculatorComponent = () => {
   return (
     <Container maxWidth="sm">
       <Box sx={{ mt: 4 }}>
-        <Display elevation={3}>
+        <Display elevation={3}
+          data-testid="display">
           {display}
         </Display>
         <Grid container spacing={1}>
@@ -151,7 +159,7 @@ const CalculatorComponent = () => {
             <Button 
               variant="outlined" 
               color="error" 
-              onClick={() => calculator.clearHistory()}
+              onClick={handleClearHistory}
               sx={{ mt: 2 }}
               data-testid="clear-history"
             >
